@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <main className="grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-      {posts.map((post) => (
+      {posts.map((post: any) => (
         <PostCard post={post} key={post.id} />
       ))}
     </main>
