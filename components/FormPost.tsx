@@ -5,7 +5,7 @@ import { FormInputPost } from "../types";
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { Tag } from "@prisma/client";
+import type { Tag } from "@prisma/client";
 
 interface FormPostProps {
   submit: SubmitHandler<FormInputPost>;
