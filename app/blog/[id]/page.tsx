@@ -7,6 +7,11 @@ import prismadb from "@/libs/prismadb";
 interface BlogDetailPageProps {
   params: {
     id: string;
+    title: string;
+    content: string;
+    Tag: {
+      name: string;
+    };
   };
 }
 
@@ -25,20 +30,20 @@ async function getPost(id: string) {
   return response;
 }
 
-const BlogDetailPage: FC<BlogDetailPageProps> = async ({ params }) => {
-  const post = await getPost(params.id);
+const BlogDetailPage: FC<BlogDetailPageProps> = ({ params }) => {
+  const post = getPost(params.id);
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto my-8 relative">
       <BackButton />
-      <h1 className="text-4xl font-bold my-4 text-gray-800">{post?.title}</h1>
-      <p className="text-gray-700 text-lg">{post?.content}</p>
+      <h1 className="text-4xl font-bold my-4 text-gray-800">{params?.title}</h1>
+      <p className="text-gray-700 text-lg">{params?.content}</p>
       <div className="absolute bottom-6 right-6">
         <ButtonAction id={params.id} />
       </div>
       <div className="flex items-center space-x-4 mt-4">
         <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-sm">
-          {post?.Tag.name}
+          {params?.Tag.name}
         </span>
       </div>
     </div>
