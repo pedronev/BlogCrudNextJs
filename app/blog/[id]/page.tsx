@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import ButtonAction from "../../../components/ButtonAction";
 import BackButton from "../../../components/BackButton";
