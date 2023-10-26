@@ -50,7 +50,13 @@ const EditPostPage: FC<EditPostPageProps> = ({ params }) => {
   return (
     <div>
       <h1 className="text-2xl my-4 font-bold text-center">Edit post</h1>
-      <FormPost submit={handleEditPost} initialValue={dataPost} isEditing />;
+      <FormPost
+        isLoadingSubmit={isLoadingSubmit}
+        submit={handleEditPost}
+        initialValue={dataPost}
+        isEditing
+      />
+      ;
     </div>
   );
 };
